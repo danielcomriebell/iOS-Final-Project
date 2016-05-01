@@ -28,7 +28,7 @@
 		8698DDA21BBC2D63005F3CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8698DDA81BBC2F00005F3CA6 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		9688E0211CAE31B400F7D621 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
-		96E577FB1CA394AE008C3C49 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = "../../KeychainAccess-master/Lib/KeychainAccess/Keychain.swift"; sourceTree = "<group>"; };
+		96E577FB1CA394AE008C3C49 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = ../Keychain.swift; sourceTree = "<group>"; };
 		96E577FD1CA394E2008C3C49 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +116,7 @@
 				TargetAttributes = {
 					8698DD921BBC2D63005F3CA6 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 69EPCMNLBV;
+						DevelopmentTeam = 5P77QRV662;
 					};
 				};
 			};
@@ -275,7 +275,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TouchIDTutorial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LockChain;
+				PRODUCT_BUNDLE_IDENTIFIER = LockChain1;
 				PRODUCT_NAME = LockChain;
 				PROVISIONING_PROFILE = "";
 			};
@@ -289,7 +289,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TouchIDTutorial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LockChain;
+				PRODUCT_BUNDLE_IDENTIFIER = LockChain1;
 				PRODUCT_NAME = LockChain;
 				PROVISIONING_PROFILE = "";
 			};

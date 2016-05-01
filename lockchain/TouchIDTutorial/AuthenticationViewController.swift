@@ -26,8 +26,8 @@ class AuthenticationViewController: UIViewController {
         // 2. Check if the device has a fingerprint sensor
         // If not, show the user an alert view and bail out!
         guard authenticationContext.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) else {
-            
-            showAlertViewIfNoBiometricSensorHasBeenDetected()
+            self.navigateToAuthenticatedViewController() //remember to change
+            //showAlertViewIfNoBiometricSensorHasBeenDetected()
             return
             
         }
