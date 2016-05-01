@@ -176,9 +176,7 @@ class ViewController: UIViewController {
             "publicKey2" : "\(public2)",
             "privateKey1" : "\(private1)"
         ]
-        
-        print(json)
-        
+                
         do{
             let url = NSURL(string: url_requested)!
             let session = NSURLSession.sharedSession()
@@ -220,8 +218,6 @@ class ViewController: UIViewController {
             "privateKey" : "\(private2)"
         ]
         
-        print(json)
-        
         do{
             let url:NSURL = NSURL(string: url_requested)!
             let session = NSURLSession.sharedSession()
@@ -241,11 +237,14 @@ class ViewController: UIViewController {
                 do {
                     //let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options:[])
                     let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                    self.show_message.text = dataString as! String
-                    print(dataString)
+                    dispatch_async(dispatch_get_main_queue()) {
+                         self.show_message.text = dataString as! String
+                    }
+                     print(dataString)
                }catch{
                     print(error)
                }
+                
             }
             task.resume()
         }catch{
