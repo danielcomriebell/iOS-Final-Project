@@ -125,7 +125,7 @@
 				TargetAttributes = {
 					8698DD921BBC2D63005F3CA6 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = BDD2DL8A6A;
+						DevelopmentTeam = 5P77QRV662;
 					};
 				};
 			};
@@ -287,7 +287,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TouchIDTutorial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LockChain21;
+				PRODUCT_BUNDLE_IDENTIFIER = LockChain1;
 				PRODUCT_NAME = LockChain;
 				PROVISIONING_PROFILE = "";
 			};
@@ -301,7 +301,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TouchIDTutorial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LockChain21;
+				PRODUCT_BUNDLE_IDENTIFIER = LockChain1;
 				PRODUCT_NAME = LockChain;
 				PROVISIONING_PROFILE = "";
 			};

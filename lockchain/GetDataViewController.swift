@@ -74,7 +74,16 @@ class GetDataViewController: UIViewController {
                 }
                 do {
                     //let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options:[])
-                    let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    var dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    dataString = dataString!.stringByReplacingOccurrencesOfString("]", withString: "")
+                    dataString = dataString!.stringByReplacingOccurrencesOfString("[", withString: "")
+                    dataString = dataString!.stringByReplacingOccurrencesOfString(",", withString: "")
+                    //make objects split "" into arrays
+                    //then set objects with array indexes
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.show_message.text = dataString as! String
+                    }
+                    print(dataString)
                     dispatch_async(dispatch_get_main_queue()) {
                         self.show_message.text = dataString as! String
                     }
