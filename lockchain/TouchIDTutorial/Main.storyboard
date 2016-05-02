@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YOl-62-Gkh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YOl-62-Gkh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -199,7 +199,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="WbE-0l-DGI" eventType="touchUpInside" id="xAW-kZ-4ZT"/>
-                                    <segue destination="2tH-7X-2nz" kind="push" id="djj-h1-S6F"/>
+                                    <segue destination="2tH-7X-2nz" kind="push" id="aJV-6M-e30"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -402,7 +402,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38Z-sf-Xj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="374.5" y="202.5"/>
+            <point key="canvasLocation" x="981.5" y="202.5"/>
         </scene>
         <!--View Controller2-->
         <scene sceneID="1Y2-m2-aup">
@@ -450,12 +450,12 @@
                     <connections>
                         <outlet property="lblQRCodeLabel" destination="UuE-Yx-kBF" id="ahR-Nn-IPT"/>
                         <outlet property="lblQRCodeResult" destination="YeR-Ud-34G" id="8r7-BS-ha8"/>
-                        <segue destination="2tH-7X-2nz" kind="modal" identifier="QRdone" id="bn4-fi-3mb"/>
+                        <segue destination="rAI-Mg-Gww" kind="modal" identifier="QRdone" id="bn4-fi-3mb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Spr-bM-UP2" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892.5" y="202.5"/>
+            <point key="canvasLocation" x="1479.5" y="202.5"/>
         </scene>
         <!--Qrgen-->
         <scene sceneID="ycc-Sg-q9T">
@@ -533,11 +533,30 @@
             </objects>
             <point key="canvasLocation" x="149" y="-551"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bmo-rL-oCq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rAI-Mg-Gww" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="eMn-Gv-z98"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PYM-JM-XXw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2tH-7X-2nz" kind="relationship" relationship="rootViewController" id="ZAS-nS-Z6D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zle-lr-mmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="394.5" y="202.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="SplashPage" width="1000" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bn4-fi-3mb"/>
+        <segue reference="aJV-6M-e30"/>
     </inferredMetricsTieBreakers>
 </document>
