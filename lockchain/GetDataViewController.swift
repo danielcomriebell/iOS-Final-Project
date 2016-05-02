@@ -90,5 +90,56 @@ class GetDataViewController: UIViewController {
         }
         
     }
+    
+    func decryptQR(url_requested: String){
+        let private2 = keychain["priv2"]!
+        let public2 = keychain["QR"]!
+        //        let private2 = self.priv2raw!
+        //        let public2 = self.pub2!
+        
+        let json = [
+            "message" : "\(public2)",
+            "privateKey" : "\(private2)"
+        ]
+        print(keychain["QR"])
+        do{
+            let url:NSURL = NSURL(string: url_requested)!
+            let session = NSURLSession.sharedSession()
+            
+            let request = NSMutableURLRequest(URL: url)
+            request.HTTPMethod = "POST"
+            request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+            request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
+            
+            let task = session.dataTaskWithRequest(request){ data,response,error in
+                if error != nil{
+                    print(error!.localizedDescription)
+                    return
+                }
+                do {
+                    //let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options:[])
+                    var dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    dataString = dataString!.stringByReplacingOccurrencesOfString("]", withString: "")
+                    dataString = dataString!.stringByReplacingOccurrencesOfString("[", withString: "")
+                    dataString = dataString!.stringByReplacingOccurrencesOfString(",", withString: "")
+                    //make objects split "" into arrays
+                    //then set objects with array indexes
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.show_message.text = dataString as! String
+                    }
+                    print(dataString)
+                }catch{
+                    print(error)
+                }
+                
+            }
+            task.resume()
+        }catch{
+            print(error)
+        }
+        
+    }
 
 }

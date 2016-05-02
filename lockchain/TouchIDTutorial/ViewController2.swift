@@ -19,6 +19,9 @@ class ViewController2: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
     var objCaptureVideoPreviewLayer:AVCaptureVideoPreviewLayer?
     var vwQRCode:UIView?
     
+    let keychain = Keychain()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureVideoCapture()
@@ -87,6 +90,17 @@ class ViewController2: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
             vwQRCode?.frame = objBarCode.bounds;
             if objMetadataMachineReadableCodeObject.stringValue != nil {
                 lblQRCodeResult.text = objMetadataMachineReadableCodeObject.stringValue
+                keychain["QR"] = objMetadataMachineReadableCodeObject.stringValue
+                var myAlert = UIAlertController(title: "Alert", message: "Key Captured", preferredStyle: UIAlertControllerStyle.Alert);
+                let okAction = (UIAlertAction(title: "Thanks", style: .Default, handler:
+                    {
+                        [unowned self] (action) -> Void in
+                        
+                        self.performSegueWithIdentifier("QRdone", sender: self)
+                    }))
+                
+                myAlert.addAction(okAction);
+                self.presentViewController(myAlert, animated: true, completion:nil);
             }
         }
     }
