@@ -8,19 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var uniqueID: UILabel!
+//    @IBOutlet weak var uniqueID: UILabel!
 
-    @IBOutlet weak var priv2: UILabel!
-    @IBOutlet weak var pub2_hash: UILabel!
-    @IBOutlet weak var priv1: UILabel!
-    @IBOutlet weak var pub1_hash: UILabel!
+//    @IBOutlet weak var priv2: UILabel!
+//    @IBOutlet weak var pub2_hash: UILabel!
+//    @IBOutlet weak var priv1: UILabel!
+//    @IBOutlet weak var pub1_hash: UILabel!
     
-    @IBOutlet weak var message: UITextField!
+//    @IBOutlet weak var message: UITextField!
     @IBOutlet weak var message_send: UIButton!
     
-    @IBOutlet weak var show_message: UILabel!
+    @IBOutlet weak var AccountInputField: UITextField!
+    
+    @IBOutlet weak var UserNameInputField: UITextField!
+    
+    @IBOutlet weak var PasswordInputField: UITextField!
+    
+//    @IBOutlet weak var show_message: UILabel!
     @IBOutlet weak var getMessage: UIButton!
     @IBOutlet weak var new_keys: UIButton!
     
@@ -37,7 +43,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         keychain["deviceId"] = NSUUID().UUIDString // Set string
         let deviceId = keychain["deviceId"] // Get string
-        uniqueID.text = deviceId;
+//        uniqueID.text = deviceId;
         
         
         ////////
@@ -55,6 +61,13 @@ class ViewController: UIViewController {
         //upload_request()
         
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true);
+        super.touchesBegan(touches, withEvent: event);
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,7 +75,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func send_data(sender: UIButton) {
-        if(self.message.text == ""){
+        if(self.AccountInputField.text == "" || self.PasswordInputField.text == "" || self.UserNameInputField.text == ""){
             print("There is no message")
         }else{
             encrypt("http://trancendus.com:8081/api/encrypt_send")
@@ -71,9 +84,9 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func get_data(sender: AnyObject) {
-        decrypt("http://trancendus.com:8081/api/reassemble")
-    }
+//    @IBAction func get_data(sender: AnyObject) {
+//        decrypt("http://trancendus.com:8081/api/reassemble")
+//    }
 
     @IBAction func get_newKey(sender: AnyObject) {
         self.newUser = true
@@ -150,10 +163,10 @@ class ViewController: UIViewController {
                 
                 ////////
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.pub1_hash.text = self.pub1
-                    self.priv1.text = self.priv1raw
-                    self.pub2_hash.text = self.pub2
-                    self.priv2.text = self.priv2raw
+//                    self.pub1_hash.text = self.pub1
+//                    self.priv1.text = self.priv1raw
+//                    self.pub2_hash.text = self.pub2
+//                    self.priv2.text = self.priv2raw
                 }
             }
             catch {
@@ -172,7 +185,7 @@ class ViewController: UIViewController {
 //        let public2 = self.pub2!
        
         let json = [
-            "message" : "\(self.message.text!)",
+            "message" : "\(self.AccountInputField.text! + self.UserNameInputField.text! + self.PasswordInputField.text!)",
             "publicKey2" : "\(public2)",
             "privateKey1" : "\(private1)"
         ]
@@ -207,51 +220,51 @@ class ViewController: UIViewController {
         
     }
     
-    func decrypt(url_requested: String){
-        let private2 = keychain["priv2"]!
-        let public2 = keychain["pub2"]!
-//        let private2 = self.priv2raw!
-//        let public2 = self.pub2!
-        
-        let json = [
-            "message" : "\(public2)",
-            "privateKey" : "\(private2)"
-        ]
-        
-        do{
-            let url:NSURL = NSURL(string: url_requested)!
-            let session = NSURLSession.sharedSession()
-            
-            let request = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = "POST"
-            request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
-            request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-            request.addValue("application/json", forHTTPHeaderField: "Accept")
-            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
-            
-            let task = session.dataTaskWithRequest(request){ data,response,error in
-                if error != nil{
-                    print(error!.localizedDescription)
-                    return
-                }
-                do {
-                    //let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options:[])
-                    let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                    dispatch_async(dispatch_get_main_queue()) {
-                         self.show_message.text = dataString as! String
-                    }
-                     print(dataString)
-               }catch{
-                    print(error)
-               }
-                
-            }
-            task.resume()
-        }catch{
-            print(error)
-        }
-        
-    }
+//    func decrypt(url_requested: String){
+//        let private2 = keychain["priv2"]!
+//        let public2 = keychain["pub2"]!
+////        let private2 = self.priv2raw!
+////        let public2 = self.pub2!
+//        
+//        let json = [
+//            "message" : "\(public2)",
+//            "privateKey" : "\(private2)"
+//        ]
+//        
+//        do{
+//            let url:NSURL = NSURL(string: url_requested)!
+//            let session = NSURLSession.sharedSession()
+//            
+//            let request = NSMutableURLRequest(URL: url)
+//            request.HTTPMethod = "POST"
+//            request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+//            request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+//            request.addValue("application/json", forHTTPHeaderField: "Accept")
+//            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
+//            
+//            let task = session.dataTaskWithRequest(request){ data,response,error in
+//                if error != nil{
+//                    print(error!.localizedDescription)
+//                    return
+//                }
+//                do {
+//                    //let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options:[])
+//                    let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+//                    dispatch_async(dispatch_get_main_queue()) {
+////                         self.show_message.text = dataString as! String
+//                    }
+//                     print(dataString)
+//               }catch{
+//                    print(error)
+//               }
+//                
+//            }
+//            task.resume()
+//        }catch{
+//            print(error)
+//        }
+//        
+//    }
 
     func download_request(url_requested: String)
     {

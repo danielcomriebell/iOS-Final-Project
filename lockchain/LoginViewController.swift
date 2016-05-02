@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userEmailTextField: UITextField!
     
@@ -19,7 +19,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.userEmailTextField.delegate = self;
+        self.userPasswordTextField.delegate = self;
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +29,20 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true);
+        super.touchesBegan(touches, withEvent: event);
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        textField.resignFirstResponder();
+        //        print("hello");
+        return true;
+    }
+    
+    
+    
     
     
     

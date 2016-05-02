@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController2: UIViewController, AVCaptureMetadataOutputObjectsDelegate
+class ViewController2: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UITextFieldDelegate
 {
     
     @IBOutlet weak var lblQRCodeResult: UILabel!
@@ -25,6 +25,13 @@ class ViewController2: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         self.addVideoPreviewLayer()
         self.initializeQRView()
     }
+
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true);
+        super.touchesBegan(touches, withEvent: event);
+    }
+    
+    
     
     func configureVideoCapture() {
         let objCaptureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)

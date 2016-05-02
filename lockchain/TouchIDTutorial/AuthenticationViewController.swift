@@ -34,6 +34,13 @@ class AuthenticationViewController: UIViewController {
     }
     
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true);
+        super.touchesBegan(touches, withEvent: event);
+    }
+    
+    
+    
     @IBAction func logoutButtonTapped(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
         NSUserDefaults.standardUserDefaults().synchronize();
@@ -64,7 +71,7 @@ class AuthenticationViewController: UIViewController {
         // 3. Check the fingerprint
         authenticationContext.evaluatePolicy(
             .DeviceOwnerAuthenticationWithBiometrics,
-            localizedReason: "Only awesome people are allowed",
+            localizedReason: "Login with Fingerprint",
             reply: { [unowned self] (success, error) -> Void in
                 
             if(success) {

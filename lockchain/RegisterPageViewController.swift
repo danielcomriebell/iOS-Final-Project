@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterPageViewController: UIViewController {
+class RegisterPageViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var userEmailTextField: UITextField!
@@ -22,12 +22,30 @@ class RegisterPageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.repeatPasswordTextField.delegate = self;
+        self.userPasswordTextField.delegate = self;
+        self.userEmailTextField.delegate = self;
+     
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        textField.resignFirstResponder();
+//        print("hello");
+        return true;
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true);
+        super.touchesBegan(touches, withEvent: event);
+    }
+    
+    
     
     @IBAction func registerButtonTapped(sender: AnyObject) {
         let userEmail = userEmailTextField.text;
@@ -50,6 +68,7 @@ class RegisterPageViewController: UIViewController {
             displayMyAlertMessage("Passwords do not match");
             return;
         }
+        
         
         
         

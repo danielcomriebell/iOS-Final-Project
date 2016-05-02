@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		653DFA771CD6DFFA00B6F951 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653DFA761CD6DFFA00B6F951 /* RegisterPageViewController.swift */; };
 		653DFA791CD6E85900B6F951 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653DFA781CD6E85900B6F951 /* LoginViewController.swift */; };
+		65776AB91CD7256400514814 /* GetDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65776AB81CD7256400514814 /* GetDataViewController.swift */; };
 		8698DD971BBC2D63005F3CA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698DD961BBC2D63005F3CA6 /* AppDelegate.swift */; };
 		8698DD991BBC2D63005F3CA6 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698DD981BBC2D63005F3CA6 /* AuthenticationViewController.swift */; };
 		8698DD9C1BBC2D63005F3CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8698DD9A1BBC2D63005F3CA6 /* Main.storyboard */; };
@@ -22,7 +23,8 @@
 
 /* Begin PBXFileReference section */
 		653DFA761CD6DFFA00B6F951 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterPageViewController.swift; path = ../RegisterPageViewController.swift; sourceTree = "<group>"; };
-		653DFA781CD6E85900B6F951 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		653DFA781CD6E85900B6F951 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		65776AB81CD7256400514814 /* GetDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetDataViewController.swift; path = ../GetDataViewController.swift; sourceTree = "<group>"; };
 		8698DD931BBC2D63005F3CA6 /* LockChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8698DD961BBC2D63005F3CA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8698DD981BBC2D63005F3CA6 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +61,6 @@
 		8698DD8A1BBC2D63005F3CA6 = {
 			isa = PBXGroup;
 			children = (
-				653DFA781CD6E85900B6F951 /* LoginViewController.swift */,
 				8698DD951BBC2D63005F3CA6 /* TouchIDTutorial */,
 				8698DD941BBC2D63005F3CA6 /* Products */,
 			);
@@ -80,7 +81,9 @@
 				8698DD961BBC2D63005F3CA6 /* AppDelegate.swift */,
 				8698DD981BBC2D63005F3CA6 /* AuthenticationViewController.swift */,
 				653DFA761CD6DFFA00B6F951 /* RegisterPageViewController.swift */,
+				653DFA781CD6E85900B6F951 /* LoginViewController.swift */,
 				96E577FB1CA394AE008C3C49 /* Keychain.swift */,
+				65776AB81CD7256400514814 /* GetDataViewController.swift */,
 				8698DD9A1BBC2D63005F3CA6 /* Main.storyboard */,
 				9688E0211CAE31B400F7D621 /* ViewController2.swift */,
 				96E577FD1CA394E2008C3C49 /* ViewController.swift */,
@@ -169,6 +172,7 @@
 				8698DD971BBC2D63005F3CA6 /* AppDelegate.swift in Sources */,
 				96E577FE1CA394E2008C3C49 /* ViewController.swift in Sources */,
 				96E577FC1CA394AE008C3C49 /* Keychain.swift in Sources */,
+				65776AB91CD7256400514814 /* GetDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
