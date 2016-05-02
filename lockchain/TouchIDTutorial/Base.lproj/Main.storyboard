@@ -443,6 +443,7 @@
                     <connections>
                         <outlet property="lblQRCodeLabel" destination="UuE-Yx-kBF" id="ahR-Nn-IPT"/>
                         <outlet property="lblQRCodeResult" destination="YeR-Ud-34G" id="8r7-BS-ha8"/>
+                        <segue destination="2tH-7X-2nz" kind="modal" identifier="QRdone" id="bn4-fi-3mb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Spr-bM-UP2" sceneMemberID="firstResponder"/>
@@ -453,4 +454,7 @@
     <resources>
         <image name="SplashPage" width="1000" height="500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bn4-fi-3mb"/>
+    </inferredMetricsTieBreakers>
 </document>
