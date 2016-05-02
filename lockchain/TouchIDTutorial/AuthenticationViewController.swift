@@ -17,6 +17,35 @@ class AuthenticationViewController: UIViewController {
     
         - parameter sender: a reference to the button that has been touched
     */
+    
+    @IBOutlet var TextField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn");
+        
+        if (!isUserLoggedIn){
+         self.performSegueWithIdentifier("registerView", sender: self)   
+        }
+    }
+    
+    
+    @IBAction func logoutButtonTapped(sender: AnyObject) {
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
+        NSUserDefaults.standardUserDefaults().synchronize();
+        self.performSegueWithIdentifier("registerView", sender: self);
+        
+    }
+    
+    
+    @IBAction func userTappedBackground(sender: AnyObject){
+        view.endEditing(true);
+    }
+    
     @IBAction func loginButtonClicked(sender: UIButton) {
         
         // 1. Create a authentication context
@@ -38,7 +67,7 @@ class AuthenticationViewController: UIViewController {
             localizedReason: "Only awesome people are allowed",
             reply: { [unowned self] (success, error) -> Void in
                 
-            if( success ) {
+            if(success) {
                 
                 // Fingerprint recognized
                 // Go to view controller
@@ -139,7 +168,7 @@ func errorMessageForLAErrorCode( errorCode:Int ) -> String{
         message = "TouchID is not available on the device"
         
     case LAError.UserCancel.rawValue:
-        message = "The user did cancel"
+        message = "You have cancelled your login attempt"
         
     case LAError.UserFallback.rawValue:
         message = "The user chose to use the fallback"
