@@ -80,9 +80,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }else{
             encrypt("http://trancendus.com:8081/api/encrypt_send")
             print("hello")
+            AccountInputField.text = "";
+            UserNameInputField.text = "";
+            PasswordInputField.text = "";
+            
+            var myAlert = UIAlertController(title: "Alert", message: "Registration is successful", preferredStyle: UIAlertControllerStyle.Alert);
+            myAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(myAlert, animated:true, completion: nil);
+            
+            
         }
         
     }
+    
 
 //    @IBAction func get_data(sender: AnyObject) {
 //        decrypt("http://trancendus.com:8081/api/reassemble")
@@ -265,6 +275,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        }
 //        
 //    }
+    
+    
+    
 
     func download_request(url_requested: String)
     {
