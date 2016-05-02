@@ -12,10 +12,11 @@
 		65776AB91CD7256400514814 /* GetDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65776AB81CD7256400514814 /* GetDataViewController.swift */; };
 		8698DD971BBC2D63005F3CA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698DD961BBC2D63005F3CA6 /* AppDelegate.swift */; };
 		8698DD991BBC2D63005F3CA6 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698DD981BBC2D63005F3CA6 /* AuthenticationViewController.swift */; };
-		8698DD9C1BBC2D63005F3CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8698DD9A1BBC2D63005F3CA6 /* Main.storyboard */; };
 		8698DD9E1BBC2D63005F3CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8698DD9D1BBC2D63005F3CA6 /* Assets.xcassets */; };
 		8698DDA11BBC2D63005F3CA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8698DD9F1BBC2D63005F3CA6 /* LaunchScreen.storyboard */; };
 		8698DDA91BBC2F00005F3CA6 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8698DDA81BBC2F00005F3CA6 /* LocalAuthentication.framework */; };
+		961BA9481CD8076F00D9EA00 /* qrgen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BA9471CD8076F00D9EA00 /* qrgen.swift */; };
+		961BA94A1CD8092E00D9EA00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961BA9491CD8092E00D9EA00 /* Main.storyboard */; };
 		9688E0221CAE31B400F7D621 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688E0211CAE31B400F7D621 /* ViewController2.swift */; };
 		96E577FC1CA394AE008C3C49 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E577FB1CA394AE008C3C49 /* Keychain.swift */; };
 		96E577FE1CA394E2008C3C49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E577FD1CA394E2008C3C49 /* ViewController.swift */; };
@@ -28,11 +29,12 @@
 		8698DD931BBC2D63005F3CA6 /* LockChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8698DD961BBC2D63005F3CA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8698DD981BBC2D63005F3CA6 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
-		8698DD9B1BBC2D63005F3CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8698DD9D1BBC2D63005F3CA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8698DDA01BBC2D63005F3CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8698DDA21BBC2D63005F3CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8698DDA81BBC2F00005F3CA6 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		961BA9471CD8076F00D9EA00 /* qrgen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = qrgen.swift; sourceTree = "<group>"; };
+		961BA9491CD8092E00D9EA00 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9688E0211CAE31B400F7D621 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		96E577FB1CA394AE008C3C49 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = ../Keychain.swift; sourceTree = "<group>"; };
 		96E577FD1CA394E2008C3C49 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,10 +85,11 @@
 				653DFA761CD6DFFA00B6F951 /* RegisterPageViewController.swift */,
 				653DFA781CD6E85900B6F951 /* LoginViewController.swift */,
 				96E577FB1CA394AE008C3C49 /* Keychain.swift */,
+				961BA9491CD8092E00D9EA00 /* Main.storyboard */,
 				65776AB81CD7256400514814 /* GetDataViewController.swift */,
-				8698DD9A1BBC2D63005F3CA6 /* Main.storyboard */,
 				9688E0211CAE31B400F7D621 /* ViewController2.swift */,
 				96E577FD1CA394E2008C3C49 /* ViewController.swift */,
+				961BA9471CD8076F00D9EA00 /* qrgen.swift */,
 				8698DD9D1BBC2D63005F3CA6 /* Assets.xcassets */,
 				8698DD9F1BBC2D63005F3CA6 /* LaunchScreen.storyboard */,
 				8698DDA21BBC2D63005F3CA6 /* Info.plist */,
@@ -125,7 +128,7 @@
 				TargetAttributes = {
 					8698DD921BBC2D63005F3CA6 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 5P77QRV662;
+						DevelopmentTeam = 69EPCMNLBV;
 					};
 				};
 			};
@@ -152,9 +155,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961BA94A1CD8092E00D9EA00 /* Main.storyboard in Resources */,
 				8698DDA11BBC2D63005F3CA6 /* LaunchScreen.storyboard in Resources */,
 				8698DD9E1BBC2D63005F3CA6 /* Assets.xcassets in Resources */,
-				8698DD9C1BBC2D63005F3CA6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +173,7 @@
 				8698DD991BBC2D63005F3CA6 /* AuthenticationViewController.swift in Sources */,
 				653DFA771CD6DFFA00B6F951 /* RegisterPageViewController.swift in Sources */,
 				8698DD971BBC2D63005F3CA6 /* AppDelegate.swift in Sources */,
+				961BA9481CD8076F00D9EA00 /* qrgen.swift in Sources */,
 				96E577FE1CA394E2008C3C49 /* ViewController.swift in Sources */,
 				96E577FC1CA394AE008C3C49 /* Keychain.swift in Sources */,
 				65776AB91CD7256400514814 /* GetDataViewController.swift in Sources */,
@@ -179,14 +183,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8698DD9A1BBC2D63005F3CA6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8698DD9B1BBC2D63005F3CA6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8698DD9F1BBC2D63005F3CA6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
