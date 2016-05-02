@@ -84,7 +84,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             UserNameInputField.text = "";
             PasswordInputField.text = "";
             
-            var myAlert = UIAlertController(title: "Alert", message: "Registration is successful", preferredStyle: UIAlertControllerStyle.Alert);
+            var myAlert = UIAlertController(title: "Alert", message: "Message has been sent to the blockchain", preferredStyle: UIAlertControllerStyle.Alert);
             myAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(myAlert, animated:true, completion: nil);
             
