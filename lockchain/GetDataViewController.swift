@@ -14,8 +14,15 @@ class GetDataViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var titleView : UIImageView
+        // set the dimensions you want here
+        titleView = UIImageView(frame:CGRectMake(0, 0, 50, 90))
+        // Set how do you want to maintain the aspect
+        titleView.contentMode = .ScaleAspectFit
+        titleView.image = UIImage(named: "lockchain_title.png")
+        
+        self.navigationItem.titleView = titleView
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
