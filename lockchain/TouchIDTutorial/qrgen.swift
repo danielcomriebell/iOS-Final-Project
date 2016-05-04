@@ -124,7 +124,7 @@ class qrgen: UIViewController, MFMailComposeViewControllerDelegate {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["ats353@gmail.com"])
+            mail.setToRecipients([NSUserDefaults.standardUserDefaults().stringForKey("userEmail")!])
 //            let imageData = UIImagePNGRepresentation(imgQRCode.image!)!
             mail.setMessageBody("<p>Attach a Screenshot!</p>", isHTML: true)
             
