@@ -15,6 +15,10 @@
 		8698DD9E1BBC2D63005F3CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8698DD9D1BBC2D63005F3CA6 /* Assets.xcassets */; };
 		8698DDA11BBC2D63005F3CA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8698DD9F1BBC2D63005F3CA6 /* LaunchScreen.storyboard */; };
 		8698DDA91BBC2F00005F3CA6 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8698DDA81BBC2F00005F3CA6 /* LocalAuthentication.framework */; };
+		961B36A41CD8382B00E0CEE6 /* lockchain_title.png in Resources */ = {isa = PBXBuildFile; fileRef = 961B36A31CD8382B00E0CEE6 /* lockchain_title.png */; };
+		961B36A61CD8447400E0CEE6 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B36A51CD8447400E0CEE6 /* UIViewExtensions.swift */; };
+		961B36A81CD8448800E0CEE6 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B36A71CD8448800E0CEE6 /* Timer.swift */; };
+		961B36AA1CD84BB700E0CEE6 /* CatenisTextureBorderLogoAlone.png in Resources */ = {isa = PBXBuildFile; fileRef = 961B36A91CD84BB700E0CEE6 /* CatenisTextureBorderLogoAlone.png */; };
 		961BA9481CD8076F00D9EA00 /* qrgen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BA9471CD8076F00D9EA00 /* qrgen.swift */; };
 		961BA94A1CD8092E00D9EA00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961BA9491CD8092E00D9EA00 /* Main.storyboard */; };
 		9688E0221CAE31B400F7D621 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688E0211CAE31B400F7D621 /* ViewController2.swift */; };
@@ -33,6 +37,10 @@
 		8698DDA01BBC2D63005F3CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8698DDA21BBC2D63005F3CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8698DDA81BBC2F00005F3CA6 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		961B36A31CD8382B00E0CEE6 /* lockchain_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockchain_title.png; sourceTree = "<group>"; };
+		961B36A51CD8447400E0CEE6 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		961B36A71CD8448800E0CEE6 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		961B36A91CD84BB700E0CEE6 /* CatenisTextureBorderLogoAlone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CatenisTextureBorderLogoAlone.png; path = Assets.xcassets/CatenisTextureBorderLogoAlone.imageset/CatenisTextureBorderLogoAlone.png; sourceTree = "<group>"; };
 		961BA9471CD8076F00D9EA00 /* qrgen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = qrgen.swift; sourceTree = "<group>"; };
 		961BA9491CD8092E00D9EA00 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9688E0211CAE31B400F7D621 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
@@ -81,6 +89,8 @@
 			children = (
 				86334D101BBC41B7004B73E0 /* Frameworks */,
 				8698DD961BBC2D63005F3CA6 /* AppDelegate.swift */,
+				961B36A31CD8382B00E0CEE6 /* lockchain_title.png */,
+				961B36A91CD84BB700E0CEE6 /* CatenisTextureBorderLogoAlone.png */,
 				8698DD981BBC2D63005F3CA6 /* AuthenticationViewController.swift */,
 				653DFA761CD6DFFA00B6F951 /* RegisterPageViewController.swift */,
 				653DFA781CD6E85900B6F951 /* LoginViewController.swift */,
@@ -89,6 +99,8 @@
 				65776AB81CD7256400514814 /* GetDataViewController.swift */,
 				9688E0211CAE31B400F7D621 /* ViewController2.swift */,
 				96E577FD1CA394E2008C3C49 /* ViewController.swift */,
+				961B36A51CD8447400E0CEE6 /* UIViewExtensions.swift */,
+				961B36A71CD8448800E0CEE6 /* Timer.swift */,
 				961BA9471CD8076F00D9EA00 /* qrgen.swift */,
 				8698DD9D1BBC2D63005F3CA6 /* Assets.xcassets */,
 				8698DD9F1BBC2D63005F3CA6 /* LaunchScreen.storyboard */,
@@ -156,8 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				961BA94A1CD8092E00D9EA00 /* Main.storyboard in Resources */,
+				961B36AA1CD84BB700E0CEE6 /* CatenisTextureBorderLogoAlone.png in Resources */,
 				8698DDA11BBC2D63005F3CA6 /* LaunchScreen.storyboard in Resources */,
 				8698DD9E1BBC2D63005F3CA6 /* Assets.xcassets in Resources */,
+				961B36A41CD8382B00E0CEE6 /* lockchain_title.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,8 +188,10 @@
 				653DFA771CD6DFFA00B6F951 /* RegisterPageViewController.swift in Sources */,
 				8698DD971BBC2D63005F3CA6 /* AppDelegate.swift in Sources */,
 				961BA9481CD8076F00D9EA00 /* qrgen.swift in Sources */,
+				961B36A61CD8447400E0CEE6 /* UIViewExtensions.swift in Sources */,
 				96E577FE1CA394E2008C3C49 /* ViewController.swift in Sources */,
 				96E577FC1CA394AE008C3C49 /* Keychain.swift in Sources */,
+				961B36A81CD8448800E0CEE6 /* Timer.swift in Sources */,
 				65776AB91CD7256400514814 /* GetDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +294,7 @@
 		8698DDA61BBC2D63005F3CA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TouchIDTutorial/Info.plist;
@@ -292,7 +308,7 @@
 		8698DDA71BBC2D63005F3CA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TouchIDTutorial/Info.plist;

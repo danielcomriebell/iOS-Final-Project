@@ -1,6 +1,5 @@
 //
 //  ViewController.swift
-//  TouchIDTutorial
 //
 //  Created by Jason Rosenstein on 3/23/16.
 //  Copyright © 2016 Frederik Jacques. All rights reserved.
@@ -28,7 +27,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 //    @IBOutlet weak var show_message: UILabel!
     @IBOutlet weak var getMessage: UIButton!
-    @IBOutlet weak var new_keys: UIButton!
+    //@IBOutlet weak var new_keys: UIButton!
+    @IBOutlet weak var new_keys: UIBarButtonItem!
     
     let keychain = Keychain()
     var pub1:String!
@@ -41,6 +41,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var titleView : UIImageView
+        // set the dimensions you want here
+        titleView = UIImageView(frame:CGRectMake(0, 0, 50, 90))
+        // Set how do you want to maintain the aspect
+        titleView.contentMode = .ScaleAspectFit
+        titleView.image = UIImage(named: "lockchain_title.png")
+        
+        self.navigationItem.titleView = titleView
+        
+        self.navigationItem.setHidesBackButton(true, animated:true);
         keychain["deviceId"] = NSUUID().UUIDString // Set string
         let deviceId = keychain["deviceId"] // Get string
 //        uniqueID.text = deviceId;
@@ -74,7 +85,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var logo: UIImageView!
     @IBAction func send_data(sender: UIButton) {
+        self.logo.rotate360Degrees()
         if(self.AccountInputField.text == "" || self.PasswordInputField.text == "" || self.UserNameInputField.text == ""){
             print("There is no message")
         }else{
@@ -84,7 +97,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             UserNameInputField.text = "";
             PasswordInputField.text = "";
             
-            var myAlert = UIAlertController(title: "Alert", message: "Password Stored", preferredStyle: UIAlertControllerStyle.Alert);
+            var myAlert = UIAlertController(title: "Success!", message: "Password Stored", preferredStyle: UIAlertControllerStyle.Alert);
             myAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(myAlert, animated:true, completion: nil);
             
@@ -97,12 +110,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //    @IBAction func get_data(sender: AnyObject) {
 //        decrypt("http://trancendus.com:8081/api/reassemble")
 //    }
-
+/*
     @IBAction func get_newKey(sender: AnyObject) {
         self.newUser = true
         key_gen("http://trancendus.com:8081/api/pk")
         //self.newUser = false
     }
+*/
+    @IBAction func get_newKey(sender: AnyObject) {
+        self.newUser = true
+        key_gen("http://trancendus.com:8081/api/pk")
+        //self.newUser = false
+    }
+    
     
     // MARK: - Navigation
 
