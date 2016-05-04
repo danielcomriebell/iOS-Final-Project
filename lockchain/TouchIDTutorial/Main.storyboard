@@ -298,7 +298,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ng-PY-zmE">
-                                <rect key="frame" x="20" y="439" width="335" height="43"/>
+                                <rect key="frame" x="20" y="475" width="335" height="43"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <state key="normal" title="SEND">
@@ -309,45 +309,34 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="erc-P2-uyi">
-                                <rect key="frame" x="20" y="241" width="335" height="30"/>
+                                <rect key="frame" x="20" y="261" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PCO-HY-Yxv">
-                                <rect key="frame" x="20" y="310" width="335" height="30"/>
+                                <rect key="frame" x="20" y="331" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcR-DA-gKM">
-                                <rect key="frame" x="20" y="201" width="132" height="32"/>
+                                <rect key="frame" x="20" y="230" width="132" height="32"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqN-Wb-K1E">
-                                <rect key="frame" x="20" y="275" width="132" height="32"/>
+                                <rect key="frame" x="20" y="299" width="132" height="32"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wk7-St-f1d">
-                                <rect key="frame" x="20" y="378" width="335" height="30"/>
+                                <rect key="frame" x="20" y="401" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vx7-lJ-VnX">
-                                <rect key="frame" x="20" y="567" width="335" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <state key="normal" title="QR SCANNER">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="EW6-PR-0CJ" kind="modal" id="W8p-Wd-NGV"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaW-dx-aJd">
-                                <rect key="frame" x="20" y="503" width="335" height="43"/>
+                                <rect key="frame" x="20" y="542" width="335" height="43"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <state key="normal" title="GET DATA">
@@ -358,7 +347,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRv-LZ-hXu">
-                                <rect key="frame" x="20" y="344" width="135" height="32"/>
+                                <rect key="frame" x="20" y="369" width="135" height="32"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -367,15 +356,15 @@
                                 <rect key="frame" x="37" y="33" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CatenisTextureBorderLogoAlone" translatesAutoresizingMaskIntoConstraints="NO" id="cUl-wQ-OQH">
-                                <rect key="frame" x="123" y="77" width="128" height="128"/>
-                            </imageView>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhs-Ef-tsq">
                                 <rect key="frame" x="299" y="89" width="46" height="30"/>
                                 <connections>
                                     <segue destination="s6E-qU-yVh" kind="push" identifier="generate" id="Ukw-DK-NrS"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CatenisTextureBorderLogoAlone" translatesAutoresizingMaskIntoConstraints="NO" id="cUl-wQ-OQH">
+                                <rect key="frame" x="123" y="89" width="128" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -553,8 +542,5 @@
         <image name="Image" width="64" height="64"/>
         <image name="Key" width="64" height="64"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="j9Y-Yy-pce"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
