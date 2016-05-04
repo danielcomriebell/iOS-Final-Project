@@ -114,7 +114,8 @@ class GetDataViewController: UIViewController {
             "message" : "\(public2)",
             "privateKey" : "\(private2)"
         ]
-        print(keychain["QR"])
+        print(public2);
+        print(keychain["pub2"])
         do{
             let url:NSURL = NSURL(string: url_requested)!
             let session = NSURLSession.sharedSession()
@@ -139,10 +140,15 @@ class GetDataViewController: UIViewController {
                     dataString = dataString!.stringByReplacingOccurrencesOfString(",", withString: "")
                     //make objects split "" into arrays
                     //then set objects with array indexes
+                        var myAlert = UIAlertController(title: "Passwords", message: dataString as! String, preferredStyle: UIAlertControllerStyle.Alert);
+                        let okAction = (UIAlertAction(title: "Thanks", style: .Default, handler:nil))
+        
+                        myAlert.addAction(okAction);
                     dispatch_async(dispatch_get_main_queue()) {
-                        self.show_message.text = dataString as! String
+                        self.presentViewController(myAlert, animated: true, completion:nil);
                     }
                     print(dataString)
+                    
                 }catch{
                     print(error)
                 }
@@ -154,5 +160,5 @@ class GetDataViewController: UIViewController {
         }
         
     }
-
+    
 }

@@ -75,7 +75,7 @@
 		8698DD8A1BBC2D63005F3CA6 = {
 			isa = PBXGroup;
 			children = (
-				8698DD951BBC2D63005F3CA6 /* TouchIDTutorial */,
+				8698DD951BBC2D63005F3CA6 /* LockChain */,
 				8698DD941BBC2D63005F3CA6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,7 +88,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8698DD951BBC2D63005F3CA6 /* TouchIDTutorial */ = {
+		8698DD951BBC2D63005F3CA6 /* LockChain */ = {
 			isa = PBXGroup;
 			children = (
 				86334D101BBC41B7004B73E0 /* Frameworks */,
@@ -110,6 +110,7 @@
 				8698DD9F1BBC2D63005F3CA6 /* LaunchScreen.storyboard */,
 				8698DDA21BBC2D63005F3CA6 /* Info.plist */,
 			);
+			name = LockChain;
 			path = TouchIDTutorial;
 			sourceTree = "<group>";
 		};
@@ -144,7 +145,7 @@
 				TargetAttributes = {
 					8698DD921BBC2D63005F3CA6 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 5P77QRV662;
+						DevelopmentTeam = 69EPCMNLBV;
 					};
 				};
 			};

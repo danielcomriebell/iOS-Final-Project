@@ -118,10 +118,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 */
     @IBAction func get_newKey(sender: AnyObject) {
-        self.newUser = true
-        key_gen("http://trancendus.com:8081/api/pk")
         self.performSegueWithIdentifier("generate", sender: self)
         //self.newUser = false
+    }
+    
+    func get_newQRKey(){
+        self.newUser = true
+        key_gen("http://trancendus.com:8081/api/pk")
     }
     
     

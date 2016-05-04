@@ -20,10 +20,12 @@ class ViewController2: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
     var vwQRCode:UIView?
     
     let keychain = Keychain()
-
+    
+    var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        counter = 0
         var titleView : UIImageView
         // set the dimensions you want here
         titleView = UIImageView(frame:CGRectMake(0, 0, 50, 90))
@@ -100,6 +102,12 @@ class ViewController2: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
             if objMetadataMachineReadableCodeObject.stringValue != nil {
                 lblQRCodeResult.text = objMetadataMachineReadableCodeObject.stringValue
                 keychain["QR"] = objMetadataMachineReadableCodeObject.stringValue
+                if (counter == 0){
+                    GetDataViewController().decryptQR("http://trancendus.com:8081/api/reassemble")
+                    counter = 1;
+                }
+                
+                
 //                var myAlert = UIAlertController(title: "Alert", message: "Key Captured", preferredStyle: UIAlertControllerStyle.Alert);
 //                let okAction = (UIAlertAction(title: "Thanks", style: .Default, handler:
 //                    {
