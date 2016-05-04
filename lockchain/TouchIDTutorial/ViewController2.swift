@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  QRCodeReaderDemo
 //
-//  Created by TheAppGuruz-iOS-103 on 19/01/15.
+//  Created by Jason Rosenstein on 3/23/2016.
 //  Copyright (c) 2015 TheAppGururz. All rights reserved.
 //
 
@@ -90,7 +90,7 @@ class ViewController2: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if metadataObjects == nil || metadataObjects.count == 0 {
             vwQRCode?.frame = CGRectZero
-            lblQRCodeResult.text = "NO QRCode text detacted"
+            lblQRCodeResult.text = "Searching . . . "
             return
         }
         let objMetadataMachineReadableCodeObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
@@ -100,16 +100,16 @@ class ViewController2: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
             if objMetadataMachineReadableCodeObject.stringValue != nil {
                 lblQRCodeResult.text = objMetadataMachineReadableCodeObject.stringValue
                 keychain["QR"] = objMetadataMachineReadableCodeObject.stringValue
-                var myAlert = UIAlertController(title: "Alert", message: "Key Captured", preferredStyle: UIAlertControllerStyle.Alert);
-                let okAction = (UIAlertAction(title: "Thanks", style: .Default, handler:
-                    {
-                        [unowned self] (action) -> Void in
-                        
-                        self.performSegueWithIdentifier("QRdone", sender: self)
-                    }))
-                
-                myAlert.addAction(okAction);
-                self.presentViewController(myAlert, animated: true, completion:nil);
+//                var myAlert = UIAlertController(title: "Alert", message: "Key Captured", preferredStyle: UIAlertControllerStyle.Alert);
+//                let okAction = (UIAlertAction(title: "Thanks", style: .Default, handler:
+//                    {
+//                        [unowned self] (action) -> Void in
+//                        
+//                        self.performSegueWithIdentifier("QRdone", sender: self)
+//                    }))
+//                
+//                myAlert.addAction(okAction);
+//                self.presentViewController(myAlert, animated: true, completion:nil);
             }
         }
     }
