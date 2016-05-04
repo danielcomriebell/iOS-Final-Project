@@ -124,16 +124,9 @@ class qrgen: UIViewController, MFMailComposeViewControllerDelegate {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["ats353@gmail.com"])
-            var body: String = "<html><body><h1>My Image as below</h1> <br/>"
-            
-            if let imageData = UIImagePNGRepresentation(imgQRCode2.image!) // Get the image from ImageView and convert to NSData
-            {
-                var base64String: String = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
-                body = body + "<div><img src='data:image/png;base64,\(base64String)' height='100' width='150'/></div>"
-            }
-            body = body + "</body></html>"
-            mail.setMessageBody(body, isHTML: true)
-            
+            let imageData = UIImagePNGRepresentation(imgQRCode2.image!)!
+            mail.addAttachmentData(imageData, mimeType: "image/png", fileName: "qr1.png")
+
             presentViewController(mail, animated: true, completion: nil)
         } else {
             // show failure alert
@@ -143,13 +136,7 @@ class qrgen: UIViewController, MFMailComposeViewControllerDelegate {
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    func getDocumentsDirectory() -> NSString {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
-    
+
     
     
 }
