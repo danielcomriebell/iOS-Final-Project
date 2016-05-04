@@ -120,6 +120,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func get_newKey(sender: AnyObject) {
         self.newUser = true
         key_gen("http://trancendus.com:8081/api/pk")
+        self.performSegueWithIdentifier("generate", sender: self)
         //self.newUser = false
     }
     
@@ -215,7 +216,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        let public2 = self.pub2!
        
         let json = [
-            "message" : "\(self.AccountInputField.text! + self.UserNameInputField.text! + self.PasswordInputField.text!)",
+            "message" : "\(self.AccountInputField.text! + ":" + self.UserNameInputField.text! + ":"  + self.PasswordInputField.text!)",
             "publicKey2" : "\(public2)",
             "privateKey1" : "\(private1)"
         ]

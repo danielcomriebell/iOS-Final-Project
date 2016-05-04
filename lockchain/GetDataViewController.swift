@@ -91,10 +91,7 @@ class GetDataViewController: UIViewController {
                         self.show_message.text = dataString as! String
                     }
                     print(dataString)
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.show_message.text = dataString as! String
-                    }
-                    print(dataString)
+                    
                 }catch{
                     print(error)
                 }

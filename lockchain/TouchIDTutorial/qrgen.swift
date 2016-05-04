@@ -7,16 +7,13 @@
 //
 
 import UIKit
+import MessageUI
 
-class qrgen: UIViewController {
+class qrgen: UIViewController, MFMailComposeViewControllerDelegate {
     
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var textField2: UITextField!
     
     @IBOutlet weak var imgQRCode: UIImageView!
     @IBOutlet weak var imgQRCode2: UIImageView!
-    
-    @IBOutlet weak var btnAction: UIButton!
     
     @IBOutlet weak var slider: UISlider!
     
@@ -24,6 +21,7 @@ class qrgen: UIViewController {
     var qrcodeImage: CIImage!
     var qrcodeImage2: CIImage!
     
+    let keychain = Keychain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +34,8 @@ class qrgen: UIViewController {
         titleView.image = UIImage(named: "lockchain_title.png")
         
         self.navigationItem.titleView = titleView
+        
+        generateQR()
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -48,14 +48,16 @@ class qrgen: UIViewController {
     
     // MARK: IBAction method implementation
     
-    @IBAction func performButtonAction(sender: AnyObject) {
+    func generateQR() {
         if qrcodeImage2 == nil || qrcodeImage == nil{
-            if textField2.text == "" || textField.text == "" {
-                return
-            }
+//            if textField2.text == "" || textField.text == "" {
+//                return
+//            }
             
-            let data = textField.text!.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
-            let data2 = textField2.text!.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
+//            let data = textField.text!.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
+//            let data2 = textField2.text!.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
+            let data = keychain["pub2"]!.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
+            let data2 = keychain["priv2"]!.dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
             
             let filter = CIFilter(name: "CIQRCodeGenerator")
             let filter2 = CIFilter(name: "CIQRCodeGenerator")
@@ -69,10 +71,10 @@ class qrgen: UIViewController {
             qrcodeImage = filter!.outputImage
             qrcodeImage2 = filter2!.outputImage
             
-            textField.resignFirstResponder()
-            textField2.resignFirstResponder()
+//            textField.resignFirstResponder()
+//            textField2.resignFirstResponder()
             
-            btnAction.setTitle("Clear", forState: UIControlState.Normal)
+//            btnAction.setTitle("Clear", forState: UIControlState.Normal)
             
             displayQRCodeImage()
             displayQRCodeImage2()
@@ -82,11 +84,11 @@ class qrgen: UIViewController {
             qrcodeImage = nil
             imgQRCode2.image = nil
             qrcodeImage2 = nil
-            btnAction.setTitle("Generate", forState: UIControlState.Normal)
+            //btnAction.setTitle("Generate", forState: UIControlState.Normal)
         }
     
-        textField.enabled = !textField.enabled
-        textField2.enabled = !textField2.enabled
+//        textField.enabled = !textField.enabled
+//        textField2.enabled = !textField2.enabled
         slider.hidden = !slider.hidden
     }
     
@@ -116,6 +118,38 @@ class qrgen: UIViewController {
         
         imgQRCode2.image = UIImage(CIImage: transformedImage2)
     }
+    
+    @IBAction func send_email(sender: AnyObject) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["ats353@gmail.com"])
+            var body: String = "<html><body><h1>My Image as below</h1> <br/>"
+            
+            if let imageData = UIImagePNGRepresentation(imgQRCode2.image!) // Get the image from ImageView and convert to NSData
+            {
+                var base64String: String = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
+                body = body + "<div><img src='data:image/png;base64,\(base64String)' height='100' width='150'/></div>"
+            }
+            body = body + "</body></html>"
+            mail.setMessageBody(body, isHTML: true)
+            
+            presentViewController(mail, animated: true, completion: nil)
+        } else {
+            // show failure alert
+        }
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func getDocumentsDirectory() -> NSString {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
     
     
 }
