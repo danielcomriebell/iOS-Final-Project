@@ -117,6 +117,7 @@ class qrgen: UIViewController, MFMailComposeViewControllerDelegate {
         let transformedImage2 = qrcodeImage2.imageByApplyingTransform(CGAffineTransformMakeScale(scaleX, scaleY))
         
         imgQRCode2.image = UIImage(CIImage: transformedImage2)
+        
     }
     
     @IBAction func send_email(sender: AnyObject) {
@@ -124,9 +125,9 @@ class qrgen: UIViewController, MFMailComposeViewControllerDelegate {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["ats353@gmail.com"])
-            let imageData = UIImagePNGRepresentation(imgQRCode2.image!)!
-            mail.addAttachmentData(imageData, mimeType: "image/png", fileName: "qr1.png")
-
+//            let imageData = UIImagePNGRepresentation(imgQRCode.image!)!
+            mail.setMessageBody("<p>Attach a Screenshot!</p>", isHTML: true)
+            
             presentViewController(mail, animated: true, completion: nil)
         } else {
             // show failure alert
