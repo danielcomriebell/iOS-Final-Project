@@ -52,6 +52,7 @@ class GetDataViewController: UIViewController {
     }
     */
     
+    
     func decrypt(url_requested: String){
         let private2 = keychain["priv2"]!
         let public2 = keychain["pub2"]!
@@ -140,10 +141,11 @@ class GetDataViewController: UIViewController {
                     dataString = dataString!.stringByReplacingOccurrencesOfString(",", withString: "")
                     //make objects split "" into arrays
                     //then set objects with array indexes
-                        var myAlert = UIAlertController(title: "Passwords", message: dataString as! String, preferredStyle: UIAlertControllerStyle.Alert);
-                        let okAction = (UIAlertAction(title: "Thanks", style: .Default, handler:nil))
+                    
+                    var myAlert = UIAlertController(title: "Passwords", message: dataString as! String, preferredStyle: UIAlertControllerStyle.Alert);
+                    let okAction = (UIAlertAction(title: "Thanks", style: .Default, handler:nil))
         
-                        myAlert.addAction(okAction);
+                    myAlert.addAction(okAction);
                     dispatch_async(dispatch_get_main_queue()) {
                         self.presentViewController(myAlert, animated: true, completion:nil);
                     }
