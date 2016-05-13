@@ -1,8 +1,7 @@
 //
 //  LoginViewController.swift
-//  lockchain
+//  LockChain
 //
-//  Created by Daniel Bell on 5/1/16.
 //  Copyright © 2016 Frederik Jacques. All rights reserved.
 //
 

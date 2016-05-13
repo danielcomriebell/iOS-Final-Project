@@ -1,4 +1,5 @@
 import Foundation
+//LockChain Animation Timer
 
 class Timer {
 	var timer = NSTimer()

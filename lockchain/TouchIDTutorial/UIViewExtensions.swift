@@ -1,4 +1,5 @@
 import UIKit
+//LockChain Animation
 
 extension UIView {
 	func rotate360Degrees(duration: CFTimeInterval = 1.0, completionDelegate: AnyObject? = nil) {

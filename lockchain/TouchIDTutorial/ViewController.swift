@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
+//  LockChain
+//  Homepage
 //
-//  Created by Jason Rosenstein on 3/23/16.
-//  Copyright © 2016 Frederik Jacques. All rights reserved.
 //
 
 import UIKit
@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //    @IBOutlet weak var pub1_hash: UILabel!
     
 //    @IBOutlet weak var message: UITextField!
+    
     @IBOutlet weak var message_send: UIButton!
     
     @IBOutlet weak var AccountInputField: UITextField!
@@ -107,16 +108,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-//    @IBAction func get_data(sender: AnyObject) {
-//        decrypt("http://trancendus.com:8081/api/reassemble")
-//    }
-/*
-    @IBAction func get_newKey(sender: AnyObject) {
-        self.newUser = true
-        key_gen("http://trancendus.com:8081/api/pk")
-        //self.newUser = false
-    }
-*/
+
     @IBAction func get_newKey(sender: AnyObject) {
         self.performSegueWithIdentifier("generate", sender: self)
         //self.newUser = false
@@ -253,53 +245,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-    
-//    func decrypt(url_requested: String){
-//        let private2 = keychain["priv2"]!
-//        let public2 = keychain["pub2"]!
-////        let private2 = self.priv2raw!
-////        let public2 = self.pub2!
-//        
-//        let json = [
-//            "message" : "\(public2)",
-//            "privateKey" : "\(private2)"
-//        ]
-//        
-//        do{
-//            let url:NSURL = NSURL(string: url_requested)!
-//            let session = NSURLSession.sharedSession()
-//            
-//            let request = NSMutableURLRequest(URL: url)
-//            request.HTTPMethod = "POST"
-//            request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
-//            request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-//            request.addValue("application/json", forHTTPHeaderField: "Accept")
-//            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
-//            
-//            let task = session.dataTaskWithRequest(request){ data,response,error in
-//                if error != nil{
-//                    print(error!.localizedDescription)
-//                    return
-//                }
-//                do {
-//                    //let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options:[])
-//                    let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//                    dispatch_async(dispatch_get_main_queue()) {
-////                         self.show_message.text = dataString as! String
-//                    }
-//                     print(dataString)
-//               }catch{
-//                    print(error)
-//               }
-//                
-//            }
-//            task.resume()
-//        }catch{
-//            print(error)
-//        }
-//        
-//    }
-    
     
     
 

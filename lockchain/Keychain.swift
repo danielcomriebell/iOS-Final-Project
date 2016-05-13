@@ -1,8 +1,7 @@
 //
 //  Keychain.swift
-//  KeychainAccess
+//  LockChain
 //
-//  Created by kishikawa katsumi on 2014/12/24.
 //  Copyright (c) 2014 kishikawa katsumi. All rights reserved.
 //
 

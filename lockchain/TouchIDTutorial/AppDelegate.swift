@@ -1,8 +1,7 @@
 //
 //  AppDelegate.swift
-//  TouchIDTutorial
+//  LockChain
 //
-//  Created by Frederik Jacques on 30/09/15.
 //  Copyright © 2015 Frederik Jacques. All rights reserved.
 //
 

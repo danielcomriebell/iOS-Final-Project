@@ -1,10 +1,8 @@
 //
 //  GetDataViewController.swift
-//  lockchain
+//  LockChain
 //
-//  Created by Daniel Bell on 5/2/16.
-//  Copyright © 2016 Frederik Jacques. All rights reserved.
-//
+//  
 
 import UIKit
 

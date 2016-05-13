@@ -1,6 +1,7 @@
 //
 //  ViewController.swift
-//  QRCodeReaderDemo
+//  LockChain
+//  QR Camera
 //
 //  Created by Jason Rosenstein on 3/23/2016.
 //  Copyright (c) 2015 TheAppGururz. All rights reserved.
@@ -107,17 +108,6 @@ class ViewController2: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
                     counter = 1;
                 }
                 
-                
-//                var myAlert = UIAlertController(title: "Alert", message: "Key Captured", preferredStyle: UIAlertControllerStyle.Alert);
-//                let okAction = (UIAlertAction(title: "Thanks", style: .Default, handler:
-//                    {
-//                        [unowned self] (action) -> Void in
-//                        
-//                        self.performSegueWithIdentifier("QRdone", sender: self)
-//                    }))
-//                
-//                myAlert.addAction(okAction);
-//                self.presentViewController(myAlert, animated: true, completion:nil);
             }
         }
     }

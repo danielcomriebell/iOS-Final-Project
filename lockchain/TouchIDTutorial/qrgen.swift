@@ -1,8 +1,8 @@
 //
 //  qrgen.swift
-//  QRCodeGen
+//  LockChain
+//  QR Generator
 //
-//  Created by Gabriel Theodoropoulos on 27/4/15.
 //  Copyright (c) 2015 Appcoda. All rights reserved.
 //
 
